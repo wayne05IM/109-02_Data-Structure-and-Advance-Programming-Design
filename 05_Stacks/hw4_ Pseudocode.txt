@@ -1,0 +1,31 @@
+bool balancedBracketProblem(string a)
+{
+    //step1 : check every character in the string and solve the question by stack ADT
+    for (each character chr in the string)
+    {
+        if (chr is a left bracket(e.g."(", "[", "{"))
+            aStack.push(char);
+        else if (chr is a right bracket(e.g.")", "[", "{"))
+        {
+            if (aStack.peek() == the same type of its left bracket(e.g."(", "[", "{"))
+                aStack.pop();
+            else    // the left bracket dosen't match the right bracket ==> invalid
+            {
+                cout << "The string is Invalid !!!";
+                return false;
+            }
+        }
+    }
+
+    //step2 : check if there are any left brackets left in the stack
+    if(aStack.isEmpty() == true)
+    {
+        cout << "The string is Valid !!!";
+        return true;
+    }
+    else    // still exists at least one left bracket in the stack ==> invalid
+    {
+        cout << "The string is Invalid !!!";
+        return false;
+    }
+}
